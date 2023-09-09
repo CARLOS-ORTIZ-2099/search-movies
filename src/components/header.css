@@ -1,0 +1,50 @@
+.header-container{
+    background-color: rgb(15, 23, 30);
+    color: aliceblue;
+    padding: 1rem;
+    text-align: center;
+   /*  width: 100%; */
+}
+
+/* Define una animación llamada 'colorChange' para el h1 */
+@keyframes colorChange {
+    /* Define colores aleatorios en diferentes etapas de la animación */
+    0% { color: cyan; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: orange; }
+    100% { color: purple; }
+}
+
+/* Aplica la animación al h1 */
+.header-container h1 {
+    /* Establece un tamaño de fuente y una fuente opcional */
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    /* Utiliza la animación 'colorChange' para cambiar el color */
+    animation: colorChange 3s infinite;
+}
+
+
+/* Define una clase llamada 'glowing-text' */
+.glowing-text {
+    /* Establece un tamaño de fuente y una fuente opcional */
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    /* Establece el color del texto */
+    color: white; /* Puedes ajustar este color según tus preferencias */
+    /* Crea un efecto de sombra difusa para lograr el resplandor */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Ajusta el color y la intensidad del resplandor */
+    /* Opcional: Agrega una animación para hacer que el resplandor parpadee */
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* Define una animación llamada 'glow' */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+}

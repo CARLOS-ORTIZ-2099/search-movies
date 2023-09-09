@@ -1,0 +1,54 @@
+.buscador-container {
+    background-color: rgb(15, 95, 185);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-container {
+   /*  background-color: blue; */
+    padding: .7rem;
+}
+
+.button{
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all ease-in-out .6s;
+    background-color: rgb(15, 121, 175);
+    color: aliceblue;
+    border-color: aliceblue;
+}
+
+.button:hover {
+    background-color: rgb(40, 144, 196);
+    cursor: pointer;
+    transition: .6s;
+    color: rgb(245, 63, 79);
+}
+
+.input{
+    margin: .7rem;
+    height: 30px;
+    width: 190px;
+    border-radius: 7px;
+}
+
+
+@media screen and (max-width:500px) {
+    .buscador-container form {
+     /*    background-color: red; */
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+     
+}
+

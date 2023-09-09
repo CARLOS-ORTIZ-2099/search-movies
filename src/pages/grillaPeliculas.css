@@ -1,0 +1,121 @@
+*{
+     margin: 0;   
+    box-sizing: border-box;
+   
+}
+.img{
+    width: 250px;
+    transition: all ease-in-out .7s;
+    margin-top: 1rem;
+    
+}
+.container-phather{
+    background-color: rgb(15, 23, 30);
+    min-height: 100vh;
+    padding: 1rem;
+    font-family: 'Castoro', serif;
+}
+
+.container{
+    background-color: rgb(15, 23, 30);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+
+.pelicula-peticion{
+    background-color: rgb(14, 44, 75);
+    border: solid cyan 3px;
+    text-align: center;
+    color: aliceblue;
+    font-weight: bold;
+ /*    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.img:hover {
+    transform: scale(1.1);
+    transition: .7s;
+    opacity: .5;
+}
+ 
+.button-back{
+    font-size: 2rem;
+    position: fixed;
+    top: 50vh;
+    height: 130px;
+    background-color: black;
+    opacity: .5;
+    color: aliceblue;
+    transition: all ease-in-out .5s;
+    
+}
+
+.button-back:hover{
+    cursor: pointer;
+    opacity: 1;
+    transition: .5s;
+}
+
+.button-next{
+    font-size: 2rem;
+    position: fixed;
+    top: 50vh;
+    right: 0;
+    height: 130px;
+    background-color: black;
+    opacity: .5;
+    color: aliceblue;
+    transition: all ease-in-out .5s;
+}
+
+
+.button-next:hover{
+    cursor: pointer;
+    opacity: 1;
+    transition: .5s;
+}
+
+
+@media screen and (max-width:300px) {
+    img{
+        width: 100px;
+        transition: all ease-in-out .5s;
+        
+    }
+    .container-phather{
+        background-color: rgb(15, 23, 30);
+        min-height: 100vh;
+        padding: 0
+    }
+    .pelicula-peticion{
+        background-color: rgb(14, 44, 75);
+        border: solid cyan 3px;
+        text-align: center;
+        color: aliceblue;
+        font-weight: bold;
+       /*  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+        padding: 1rem;
+        border-radius: 5px;
+    }
+    .container{
+        background-color: rgb(15, 23, 30);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    
+  
+    
+}

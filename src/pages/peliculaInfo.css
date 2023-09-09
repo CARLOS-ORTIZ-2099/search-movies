@@ -1,0 +1,140 @@
+img{
+    background-color: rgb(31, 70, 197);
+}
+
+.peli-banner {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-size: contain;
+    background-position: top center; */
+    color: whitesmoke;
+    min-height: 600px;
+    text-align: center;
+   
+}
+
+
+.peli-container{
+    background-color: rgb(15, 23, 30);
+    min-height: 100vh;
+    color: aliceblue;
+    padding: .5rem;
+}
+
+
+.info-peli {
+    text-align: center;
+    line-height: 1.5;
+   
+}
+
+.info-peli h1{
+   font-family: 'Unna', serif;
+   
+  
+}
+
+.info-peli h3{
+    font-family: 'Kameron', serif;
+    line-height: 1.9;
+    
+}
+
+.info-peli p {
+    margin: 3rem;
+    font-family: 'Castoro', serif;
+}
+
+.info-peli button {
+   height: 60px;
+   border-radius: 10px;
+   font-size: 1rem;
+   font-weight: bold;
+   transition: all ease-in-out .6s;
+   background-color: rgb(15, 121, 175);
+   color: aliceblue;
+   margin-top: .7rem;
+}
+
+.info-peli button:hover {
+    background-color: rgb(40, 144, 196);
+    cursor: pointer;
+    transition: .6s;
+}
+
+
+/* 
+tamano pequeño
+.peli-banner {
+    background-repeat: no-repeat;
+   
+    background-size: contain;
+    background-position: top center;
+    color: whitesmoke;
+    min-height: 200px;
+}
+
+ */
+
+
+ .icon-play{
+    color:rgb(28, 107,242);
+    font-size: 2.5rem;
+    cursor: pointer;
+    margin-top: 5rem;
+ }
+
+ .icon-x{
+    color:rgb(323,23,23);
+    font-size: 2.5rem;
+    cursor: pointer;
+ }
+
+
+@media screen and (max-width:500px) {
+    .peli-banner {
+        background-repeat: no-repeat;
+       
+        background-size: contain;
+        background-position: top center;
+        color: whitesmoke;
+        min-height: 250px;
+    }
+
+    .youtube-container {
+        position: relative;
+        border: solid purple 10px;
+        padding-bottom: 56.25%; /* Proporción de 16:9 para el ancho y la altura */
+        height: 0;
+        overflow: hidden;
+      }
+      
+  
+    .youtube{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+@media screen and (max-width:300px) {
+    .peli-container{
+  
+        min-height: 100vh;
+        color: aliceblue;
+        padding: .2rem;
+    }
+    
+}
+
+@media screen and (max-width:700px) {
+    .info-peli button {
+        height: 45px;
+        border-radius: 8px;
+        font-size: .8rem;
+        margin-top: .5rem;
+     }
+}

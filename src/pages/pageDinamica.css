@@ -1,0 +1,45 @@
+.container-phather{
+ font-family: 'Castoro', serif;
+}
+
+.page-dinamica-container{
+    background-color: rgb(15, 23, 30);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.button-container{
+    background-color: rgb(15, 23, 30);
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.button-container button {
+    height: 60px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all ease-in-out .6s;
+    background-color: rgb(15, 121, 175);
+    color: aliceblue;
+ }
+
+.button-container button:hover {
+     background-color: rgb(40, 144, 196);
+     cursor: pointer;
+     transition: .6s;
+ }
+ 
+ @media screen and (max-width:300px) {
+    .page-dinamica-container{
+        background-color: rgb(15, 23, 30);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: center;
+        gap: 1.5rem;
+    }
+ }

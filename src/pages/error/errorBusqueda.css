@@ -1,0 +1,44 @@
+.error-busqueda-container{
+  /*   background-color: #af7b7b; */
+   /*  min-height: 100vh; */
+    text-align: center;
+    padding: .7rem;
+    width: 50%;
+    margin:  0 auto;
+
+}
+
+.error-busqueda-container h1{
+    color: aliceblue;
+    margin-bottom: 2rem;
+}
+
+.error-busqueda-container img{
+    background-color: white;
+    width: 250px;
+}
+
+@media screen and (max-width:700px) {
+    .error-busqueda-container{
+        /*   background-color: #af7b7b; */
+         /*  min-height: 100vh; */
+          text-align: center;
+          padding: 0;
+          width: 50%;
+          margin:  0 auto;
+      
+      }
+      
+
+
+    .error-busqueda-container img{
+        background-color: white;
+        width: 160px;
+        
+    }
+    .error-busqueda-container h1{
+        font-size: 25px;
+    }
+
+
+}
