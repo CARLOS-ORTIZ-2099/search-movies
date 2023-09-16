@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import imageError from '../../assets/movie-svgrepo-com.svg'
-import './errorBusqueda.css'
+import './error-busqueda.css'
 
 export const ErrorBusqueda = ({peliculasBusqueda}) => {
 
