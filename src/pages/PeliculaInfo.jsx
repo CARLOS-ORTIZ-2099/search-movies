@@ -8,7 +8,7 @@ import { useState } from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCirclePlay, faCircleXmark} from '@fortawesome/free-solid-svg-icons'
 import { InfoPeliError } from "./error/InfoPeliError";
-import './peliculaInfo.css'
+import './pelicula-info.css'
 
 export const PeliculaInfo = () => {
 
