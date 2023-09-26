@@ -14,7 +14,9 @@ export const Trailer = ({TrailerState, linkTrailer, watchTrailer}) => {
                         : 
                             <div className="youtube-container">
                                 {
-                                    linkTrailer !== null? (
+                                    linkTrailer.error  ? 
+                                    <h1>{linkTrailer.error.message}</h1>
+                                    :(
                                         <>
                                             <YouTube className="youtube"
                                                 videoId={linkTrailer}
@@ -26,9 +28,8 @@ export const Trailer = ({TrailerState, linkTrailer, watchTrailer}) => {
                                             /> 
                                             <FontAwesomeIcon className="icon-x" onClick={watchTrailer} icon={faCircleXmark} fade/>
                                         </>
-                                        )
-                                        :'no hay video disponible'
-                                        }
+                                    )
+                                }
                                         
                             </div>
                 }  

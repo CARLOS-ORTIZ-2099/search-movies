@@ -33,7 +33,6 @@ export const PageDinamica = () => {
         }
   }
 
- 
   return (
    <>
         <Buscador />
@@ -50,7 +49,7 @@ export const PageDinamica = () => {
                   return <div className='pelicula-peticion' key={ele.id}>
                           <h1>{ele.original_title}</h1>
                           {
-                            ele.poster_path!== null ?<img className='img' src={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`} alt="" /> :' hay imagen disponible'
+                            ele.poster_path!== null ?<img className='img' src={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`} alt="" /> :'No hay imagen disponible'
                           }
                           
                           <br/>

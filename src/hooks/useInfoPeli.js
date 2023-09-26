@@ -22,7 +22,7 @@ export const useInfoPeli = () => {
                 let response = await fetch(`https://api.themoviedb.org/3/movie/${idPeli}?api_key=5541f1152f0ba9f5a5301b30076f90b6&append_to_response=videos,images`)
                 console.log(response)
                 if(response.ok!== true){
-                    throw 'no hay data'
+                    throw 'No Hay Data'
                 }
                 let data = await response.json()
                 console.log(data)

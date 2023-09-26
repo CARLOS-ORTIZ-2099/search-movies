@@ -25,12 +25,12 @@ export const PeliculaInfo = () => {
 
 let infoPeli = useInfoPeli()
 let linkTrailer = useTrailerPeli()
-console.log(linkTrailer)
+//console.log(linkTrailer)
+//console.log(infoPeli)
 
-console.log(infoPeli)
   return (
       <>
-
+      {/* el custom hook useInfoPeli puede tener la info de la peli si la base de datos no reporto un error o un objeto con el error si la base de datos reporto algun error o no encontro la peli */}
         {
           infoPeli.error 
             ? 
@@ -39,7 +39,7 @@ console.log(infoPeli)
             <div className='peli-container'>  
 
                   <div className='peli-banner' style={{backgroundImage:`url(https://image.tmdb.org/t/p/w1280/${infoPeli.backdrop_path})`}}>        
-                          <Trailer TrailerState={TrailerState} watchTrailer={watchTrailer} linkTrailer={linkTrailer}/> 
+                        <Trailer TrailerState={TrailerState} watchTrailer={watchTrailer} linkTrailer={linkTrailer}/> 
                   </div>
 
                   <div className="info-peli">
@@ -47,7 +47,7 @@ console.log(infoPeli)
                   </div>
 
             </div>   
-     }
+        }
       </>
     
   )

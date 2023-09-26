@@ -14,7 +14,7 @@ export const useTrailerPeli = () => {
 
     useEffect(() => {
         videosTrailer()
-    }, [])
+    }, [idPeli])
 
     
     async function videosTrailer() {
@@ -26,18 +26,28 @@ export const useTrailerPeli = () => {
             console.log(videos)
             if(videos.results.length < 1){
                
-                throw new Error('no hay trailer')
+                throw new Error('No hay trailer disponible 😥')
             }
             let trailer = videos.results.find((e, ) => {
               return e.type == 'Trailer';  // retornaremos la primera coincidencia
             });
-            let trailerVideo = trailer.key
-          
-            setLinkTrailer(trailerVideo)
+
+            if(trailer == undefined){
+               
+               let auxiliarTrailer = videos.results[0].key
+               setLinkTrailer(auxiliarTrailer)
+            }
+            else{
+                let trailerVideo = trailer.key
+                console.log(trailerVideo)
+                setLinkTrailer(trailerVideo)
+            }
+
         } 
         catch(error){
             console.error(error)
-            setLinkTrailer(null)
+            setLinkTrailer({error:error})
+            console.log(linkTrailer)
         }
 
       }

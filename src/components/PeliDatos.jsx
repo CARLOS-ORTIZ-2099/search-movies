@@ -7,37 +7,38 @@ export const PeliDatos = ({infoPeli, back}) => {
 
                     <h1>{infoPeli.title}</h1>
                     <p>{infoPeli.overview}</p>
-                    <h3>Date :{infoPeli.release_date}</h3>
-                    <h3>Language Original: {infoPeli.original_language}</h3>
+                    <h2>Date : {infoPeli.release_date}</h2>
+                    <h2>Language Original: {infoPeli.original_language}</h2>
                     <h3>Average : {infoPeli.vote_average}%</h3>
                     <button onClick={back}>retur home</button>
-
-                    <h1>Genre: </h1>
+                   
+                    <h3>Genre: </h3>
                        {
                             infoPeli.genres?.map(genre => (
                             <span key={genre.id}> {genre.name}</span>
                             ))
                        }
 
-                        <h2>Run Time : { infoPeli.runtime} minutes</h2>
-                        <h2> Companies Production</h2>
+                        <h3>Run Time : { infoPeli.runtime} minutes</h3>
+                        
+                        <h2 style={{color:'tomato'}}> Companies Production : </h2>
 
                        {
                             infoPeli.production_companies?.map(companie => (
                             <div key={companie.id}>
-                                <h2>{companie.name}</h2>
+                                <h3>{companie.name}</h3>
                                 {
-                                    companie.logo_path ? <img style={{width:'15%'}} src={`https://image.tmdb.org/t/p/original${companie.logo_path}`}/>: 'sin data'
+                                    companie.logo_path ? <img style={{width:'15%'}} src={`https://image.tmdb.org/t/p/original${companie.logo_path}`}/>: 'No hay imagen disponible'
                                 }                             
                             </div>
                         ))
                        }
 
-                         <h2>Production Countries: </h2>
+                         <h2 style={{color:'tomato'}}>Production Countries: </h2>
 
                        {
                              infoPeli.production_countries?.map((countrie, index) => (
-                              <h2 key={index}>{countrie.name}</h2>
+                              <h3 key={index}>{countrie.name}</h3>
                         ))
                        }
 
