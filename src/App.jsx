@@ -5,6 +5,7 @@ import { PageDinamica } from './pages/PageDinamica'
 import {PeliculaInfo } from './pages/PeliculaInfo'
 import { Header } from './components/Header'
 
+
 function App() {
 
 
@@ -14,8 +15,9 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                <Route path='/pelicula/:nameid' element={<PeliculaInfo/>}/>
+                <Route path='/pelicula/:idPeli' element={<PeliculaInfo/>}/>
                 <Route path='/:namepeli' element={<PageDinamica/>}/>
+          
             </Routes>
         </BrowserRouter>
     </>

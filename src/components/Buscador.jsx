@@ -21,7 +21,6 @@ const navigate = useNavigate()
     }
 
 
-  
   return (
     <div className="buscador-container">
         <form className="form-conatiner" onSubmit={submit} action="">

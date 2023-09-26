@@ -31,7 +31,7 @@ const back = () => {
     async function GrillaPeliculas(page) {
         try{
             let response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=5541f1152f0ba9f5a5301b30076f90b6&page=${page}`)
-    
+                                        
             if(response.ok !== true) throw 'data no encontrada'
     
             let data = await response.json()
@@ -40,8 +40,7 @@ const back = () => {
         }
         catch(error){
             console.log(error)
-        }
-        
+        }   
     }
 
   return (
@@ -49,12 +48,15 @@ const back = () => {
 
             <div className="container">
                 {
-                    peliculas.map(pelicula => {
+                    peliculas?.map(pelicula => {
                         return <div  className="pelicula-peticion" key={pelicula.id}>
                                         <div>
                                             <h1>{pelicula.title}</h1>
-                                            <img className='img' src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} alt="" /> <br/>
-                                            <Link to={`/pelicula/${pelicula.title+ ' '+pelicula.id}`}>see more</Link>
+                                            {
+                                                pelicula?.poster_path!== null ? <img className='img' src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} alt="" /> : <h1>no hay imagen</h1>
+                                            }
+                                            <br/>
+                                            <Link to={`/pelicula/${pelicula.id}`}>see more</Link>
                                         </div>
                                 </div>
                     })

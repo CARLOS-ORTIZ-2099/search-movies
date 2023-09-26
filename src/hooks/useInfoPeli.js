@@ -6,37 +6,28 @@ export const useInfoPeli = () => {
 
     console.log(useParams())
 
-    const {nameid} = useParams()
-    console.log(nameid)
-    let espacios = nameid.lastIndexOf(' ')+1 
-  
-    let nombrePelicula = nameid.slice(0,espacios-1)
-    console.log(nombrePelicula)
-    
-    let copyNamePeli = [...nameid]
-    let id = copyNamePeli.slice(espacios,copyNamePeli.length).join('')
-    console.log(id)
+    const {idPeli} = useParams()
+    console.log(idPeli)
+
 
     const [infoPeli, setInfoPeli] = useState([])
 
     useEffect(() => {
         MovieSearch()
-    }, [nameid])
+    }, [idPeli])
 
 
     async function MovieSearch() {
             try{
-                let response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=5541f1152f0ba9f5a5301b30076f90b6&query=${nombrePelicula}`)
+                let response = await fetch(`https://api.themoviedb.org/3/movie/${idPeli}?api_key=5541f1152f0ba9f5a5301b30076f90b6&append_to_response=videos,images`)
                 console.log(response)
+                if(response.ok!== true){
+                    throw 'no hay data'
+                }
                 let data = await response.json()
                 console.log(data)
-                let filtrado =data.results.filter(ele => ele.id == id)
-                console.log(filtrado)
-                if(filtrado.length < 1){
-                    throw 'no hay data disponible'
-                }
-                setInfoPeli(...filtrado)
-                console.log(infoPeli)
+                
+                setInfoPeli(data)
             }
             catch(error){
                 console.error(error)

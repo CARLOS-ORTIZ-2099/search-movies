@@ -28,12 +28,12 @@ export const PageDinamica = () => {
         }
         catch(error){
           console.error(error)
-          setPeliculasBusqueda({error})
+          setPeliculasBusqueda({error:error})
           console.log(peliculasBusqueda)
         }
   }
 
-
+ 
   return (
    <>
         <Buscador />
@@ -45,15 +45,16 @@ export const PageDinamica = () => {
           </div>
           <div className='page-dinamica-container'>
               {
-                peliculasBusqueda.error?<ErrorBusqueda peliculasBusqueda={peliculasBusqueda}/>:( peliculasBusqueda.map(ele => {
+                peliculasBusqueda.error ? <ErrorBusqueda peliculasBusqueda={peliculasBusqueda}/>
+                              :( peliculasBusqueda.map(ele => {
                   return <div className='pelicula-peticion' key={ele.id}>
                           <h1>{ele.original_title}</h1>
-                          <img className='img' src={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`} alt="" /> 
-                        {/*  <h2>{ele.release_date}</h2>
-                          <h2>{ele.original_language}</h2>
-                          <p>{ele.overview}</p> */}
+                          {
+                            ele.poster_path!== null ?<img className='img' src={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`} alt="" /> :' hay imagen disponible'
+                          }
+                          
                           <br/>
-                          <Link to={`/pelicula/${ele.title+ ' '+ele.id}`}>see more</Link>
+                          <Link to={`/pelicula/${ele.id}`}>see more</Link>
                         </div>
                 }))
               }

@@ -1,5 +1,8 @@
 img{
     background-color: rgb(31, 70, 197);
+ 
+        width: 250px;
+    
 }
 
 .peli-banner {
@@ -89,6 +92,7 @@ tamano pequeño
     font-size: 2.5rem;
     cursor: pointer;
  }
+
 
 
 @media screen and (max-width:500px) {
