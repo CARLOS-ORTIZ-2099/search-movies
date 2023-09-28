@@ -9,7 +9,6 @@ export const Buscador = () => {
 const [namePeli, setNamePeli] = useState('')
 const navigate = useNavigate()
 
-
     const submit = (e) => {
         e.preventDefault()
         console.log(namePeli)
@@ -19,8 +18,6 @@ const navigate = useNavigate()
         navigate(`/${namePeli}`)
         
     }
-
-
   return (
     <div className="buscador-container">
         <form className="form-conatiner" onSubmit={submit} action="">

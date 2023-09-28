@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Gallery } from './Gallery'
 
-
 export const PeliDatos = ({infoPeli, back}) => {
 
   return (
@@ -41,7 +40,6 @@ export const PeliDatos = ({infoPeli, back}) => {
                         ))
                        }
                       <Gallery infoPeli={infoPeli}/>
-
     </div>
   )
 }

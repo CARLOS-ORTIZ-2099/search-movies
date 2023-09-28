@@ -46,7 +46,6 @@ console.log(infoPeli)
 
   };
 
-
  const handelRotationLeft = () => {
     const totalLength = images.length
 
@@ -57,7 +56,6 @@ console.log(infoPeli)
         return
     }
 
-
     const newIndex = currentIndex - 1
 
     const newUrl = images.filter((element) => images.indexOf(element) == newIndex)
@@ -67,8 +65,6 @@ console.log(infoPeli)
     setClickedImg(newItem)
     setCurrentIndex(newIndex)
  }
-
-
 
   return (
         <>

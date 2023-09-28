@@ -38,10 +38,10 @@ export const PageDinamica = () => {
         <Buscador />
       <div className='container-phather'>
           
-    
           <div className='button-container'>
             <button onClick={()=> back('/')}>Return Home</button>
           </div>
+          
           <div className='page-dinamica-container'>
               {
                 peliculasBusqueda.error ? <ErrorBusqueda peliculasBusqueda={peliculasBusqueda}/>

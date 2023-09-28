@@ -11,9 +11,7 @@ export const ErrorBusqueda = ({peliculasBusqueda}) => {
          
                 <h1>{peliculasBusqueda.error}</h1>
                 <img src={imageError} alt=""/>
-               
-                
-           
+            
     </div>
   )
 }

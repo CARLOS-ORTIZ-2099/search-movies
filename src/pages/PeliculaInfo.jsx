@@ -10,23 +10,17 @@ import { Trailer } from "../components/Trailer";
 import { PeliDatos } from "../components/PeliDatos";
 
 export const PeliculaInfo = () => {
-
+  
   const [TrailerState, setTrailerState] = useState(false)
 
-  const watchTrailer = () => {
-    setTrailerState(!TrailerState)
-  }
+  const watchTrailer = () => setTrailerState(!TrailerState)
 
- const navegation = useNavigate()   
+  const navegation = useNavigate()   
 
-  const back = () => {
-     navegation(-1)
-  }  
+  const back = () => navegation(-1)  
 
 let infoPeli = useInfoPeli()
 let linkTrailer = useTrailerPeli()
-//console.log(linkTrailer)
-//console.log(infoPeli)
 
   return (
       <>

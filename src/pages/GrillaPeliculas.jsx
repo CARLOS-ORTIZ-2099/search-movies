@@ -13,7 +13,6 @@ export const GrillaPeliculas = () => {
         
     },[page])
 
-
 const next = () => {
     setPages((page) => page + 1)
     console.log(page)
@@ -45,7 +44,7 @@ const back = () => {
 
   return (
     <div className="container-phather">
-
+        
             <div className="container">
                 {
                     peliculas?.map(pelicula => {
