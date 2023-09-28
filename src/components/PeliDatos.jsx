@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
+import { Gallery } from './Gallery'
 
 
 export const PeliDatos = ({infoPeli, back}) => {
+
   return (
     <div>
-
                     <h1>{infoPeli.title}</h1>
                     <p>{infoPeli.overview}</p>
                     <h2>Date : {infoPeli.release_date}</h2>
@@ -33,22 +34,19 @@ export const PeliDatos = ({infoPeli, back}) => {
                             </div>
                         ))
                        }
-
                          <h2 style={{color:'tomato'}}>Production Countries: </h2>
-
                        {
                              infoPeli.production_countries?.map((countrie, index) => (
                               <h3 key={index}>{countrie.name}</h3>
                         ))
                        }
-
-                      
-
-                       {
-                            infoPeli?.images?.backdrops?.map((ele, index) => (index < 10 ? <img key={index} src={`https://image.tmdb.org/t/p/original${ele.file_path}`} alt="" />: ''
-                            ))
-                       }
+                      <Gallery infoPeli={infoPeli}/>
 
     </div>
   )
 }
+/* NOTA SOBRE EL ENCADENAMIENTO OPCIONAL
+  Exactamente, el operador de encadenamiento opcional `?.` en React (y en JavaScript en general) es útil cuando estás trabajando con datos asincrónicos, como los datos que provienen de una API. Cuando utilizas `?.`, le estás diciendo a React que espere hasta que el valor de la propiedad `production_companies` en `infoPeli` esté definido y luego realice el mapeo. Esto evita errores en tiempo de ejecución cuando intentas acceder a propiedades de objetos que aún no se han cargado o inicializado, lo que es común cuando trabajas con datos asincrónicos.
+
+Por ejemplo, si `infoPeli` inicialmente es `null` o `undefined` y luego se actualiza con los datos de la API después de una solicitud asincrónica, el operador de encadenamiento opcional `?.` evita que se produzcan errores al tratar de acceder a `production_companies` antes de que los datos estén disponibles. En lugar de generar un error, React esperará pacientemente hasta que `infoPeli.production_companies` tenga un valor antes de ejecutar el mapeo. Esto es especialmente útil en aplicaciones React que trabajan con datos en tiempo real o datos cargados de manera asincrónica.
+*/
