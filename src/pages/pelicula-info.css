@@ -107,7 +107,7 @@ tamano pequeño
 
     .youtube-container {
         position: relative;
-        border: solid purple 10px;
+       /*  border: solid purple 10px; */
         padding-bottom: 56.25%; /* Proporción de 16:9 para el ancho y la altura */
         height: 0;
         overflow: hidden;

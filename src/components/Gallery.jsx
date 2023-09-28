@@ -14,6 +14,7 @@ console.log(infoPeli)
   useEffect(() => {
     let array = infoPeli?.images?.backdrops?.filter((imagen, index) => index < 10 )
     setImages(array)
+    console.log(array)
   }, [infoPeli])
 
   const handleClick = (item, index) => {
@@ -26,7 +27,7 @@ console.log(infoPeli)
   const handelRotationRight = () => {
     const totalLength = images.length;
 
-    if (currentIndex +1 >= totalLength) {
+    if (currentIndex+1  >= totalLength) {
 
         setCurrentIndex(0);
         const newUrl =  images[0].file_path;
@@ -83,19 +84,19 @@ console.log(infoPeli)
                     ))
                 }
             </div>
-            {    <div style={{background:'red'}}>
-                {
-                    clickedImg && (
-                        <Modal
-                        clickedImg={clickedImg}
-                        handelRotationRight={handelRotationRight}
-                        setClickedImg={setClickedImg}
-                        handelRotationLeft={handelRotationLeft}
-                        />
-                    )
-                }
-                </div>
-            }
+            <div style={{background:'red'}}>
+                        {
+                            clickedImg && (
+                                <Modal
+                                clickedImg={clickedImg}
+                                handelRotationRight={handelRotationRight}
+                                setClickedImg={setClickedImg}
+                                handelRotationLeft={handelRotationLeft}
+                                />
+                            )
+                        }
+            </div>
+            
         </>
   )
 
