@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-
+const urlApi = import.meta.env.VITE_API_URL
+const key = import.meta.env.VITE_KEY
 
 export const useTrailerPeli = () => {
 
     console.log(useParams())
     const {idPeli} = useParams()
     console.log(idPeli)
-
+    /* se crea un estado para guardar la data que se retornara */
     const [linkTrailer, setLinkTrailer] = useState()
    
-
     useEffect(() => {
         videosTrailer()
     }, [idPeli])
@@ -19,7 +19,7 @@ export const useTrailerPeli = () => {
     
     async function videosTrailer() {
         try {
-            let response = await fetch(`https://api.themoviedb.org/3/movie/${idPeli}/videos?api_key=5541f1152f0ba9f5a5301b30076f90b6`)
+            let response = await fetch(`${urlApi}/movie/${idPeli}/videos?api_key=${key}`)
                                         
             console.log(response)
             const videos = await response.json()
@@ -49,10 +49,10 @@ export const useTrailerPeli = () => {
             setLinkTrailer({error:error})
             console.log(linkTrailer)
         }
-
       }
       
-
+/* link trailer retornara un objeto con un error generado por la excepcion, si no encuentra ni un tipo de video o devolvera un trailer si encuentra alguno de ese tipo,
+   pero si devuelve un array de videos que no son necesariamente del tipo trailer pues devolvera el primer valor, sin importar el tipo de video que sea */
       return linkTrailer
       
 }

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Gallery } from './Gallery'
+const images = import.meta.env.VITE_IMAGES
 
 export const PeliDatos = ({infoPeli, back}) => {
 
@@ -28,7 +29,7 @@ export const PeliDatos = ({infoPeli, back}) => {
                             <div key={companie.id}>
                                 <h3>{companie.name}</h3>
                                 {
-                                    companie.logo_path ? <img style={{width:'15%'}} src={`https://image.tmdb.org/t/p/original${companie.logo_path}`}/>: 'No hay imagen disponible'
+                                    companie.logo_path ? <img style={{width:'15%'}} src={`${images}/original${companie.logo_path}`}/>: 'No hay imagen disponible'
                                 }                             
                             </div>
                         ))

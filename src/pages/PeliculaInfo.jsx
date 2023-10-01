@@ -8,6 +8,7 @@ import { InfoPeliError } from "./error/InfoPeliError";
 import './pelicula-info.css'
 import { Trailer } from "../components/Trailer";
 import { PeliDatos } from "../components/PeliDatos";
+const images = import.meta.env.VITE_IMAGES
 
 export const PeliculaInfo = () => {
   
@@ -32,8 +33,8 @@ let linkTrailer = useTrailerPeli()
             :
             <div className='peli-container'>  
 
-                  <div className='peli-banner' style={{backgroundImage:`url(https://image.tmdb.org/t/p/w1280/${infoPeli.backdrop_path})`}}>        
-                        <Trailer TrailerState={TrailerState} watchTrailer={watchTrailer} linkTrailer={linkTrailer}/> 
+                  <div className='peli-banner' style={{backgroundImage:`url(${images}/w1280/${infoPeli.backdrop_path})`}}>        
+                      <Trailer TrailerState={TrailerState} watchTrailer={watchTrailer} linkTrailer={linkTrailer}/> 
                   </div>
 
                   <div className="info-peli">

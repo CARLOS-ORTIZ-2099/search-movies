@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+const urlApi = import.meta.env.VITE_API_URL
+const key = import.meta.env.VITE_KEY
 
 export const useInfoPeli = () => {
 
@@ -19,7 +21,7 @@ export const useInfoPeli = () => {
 
     async function MovieSearch() {
             try{
-                let response = await fetch(`https://api.themoviedb.org/3/movie/${idPeli}?api_key=5541f1152f0ba9f5a5301b30076f90b6&append_to_response=videos,images`)
+                let response = await fetch(`${urlApi}/movie/${idPeli}?api_key=${key}&append_to_response=videos,images`)
                 console.log(response)
                 if(response.ok!== true){
                     throw 'No Hay Data'
@@ -31,8 +33,7 @@ export const useInfoPeli = () => {
             }
             catch(error){
                 console.error(error)
-                setInfoPeli({error:error})
-                
+                setInfoPeli({error:error})       
             }
 
 
@@ -40,5 +41,5 @@ export const useInfoPeli = () => {
     console.log(infoPeli)
   return  infoPeli
 }
-
+/* al finalizar el estado infopeli puede devolver un objeto de error o un objeto con los datos de la peli */
 export default useInfoPeli

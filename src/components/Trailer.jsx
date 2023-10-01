@@ -4,7 +4,8 @@ import {faCirclePlay, faCircleXmark} from '@fortawesome/free-solid-svg-icons'
 import YouTube from 'react-youtube';
 
 
-
+/* se recibe como props el trailerState que me indica si el trailer debe mostrarse o no, la funcion watchTrailer que se encarga de cambiar 
+   ese estado y link trailer que es el valor que retornara el custo Hook useTrailePeli, que sabemos retornra un error o un video */
 export const Trailer = ({TrailerState, linkTrailer, watchTrailer}) => {
   return (
     <div>
@@ -29,11 +30,9 @@ export const Trailer = ({TrailerState, linkTrailer, watchTrailer}) => {
                                             <FontAwesomeIcon className="icon-x" onClick={watchTrailer} icon={faCircleXmark} fade/>
                                         </>
                                     )
-                                }
-                                        
+                                }            
                             </div>
                 }  
-
     </div>
   )
 }

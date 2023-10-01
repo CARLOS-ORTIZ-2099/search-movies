@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import './page-dinamica.css'
 import { ErrorBusqueda } from './error/ErrorBusqueda'
+const urlApi = import.meta.env.VITE_API_URL
+const key = import.meta.env.VITE_KEY
+const images = import.meta.env.VITE_IMAGES
 
 export const PageDinamica = () => {
     const {namepeli} = useParams()
@@ -18,7 +21,7 @@ export const PageDinamica = () => {
 
     async function buscar(namepeli) {
         try{
-            let response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=5541f1152f0ba9f5a5301b30076f90b6&query=${namepeli}`)
+            let response = await fetch(`${urlApi}/search/movie?api_key=${key}&query=${namepeli}`)
             let data = await response.json()
             console.log(data)
             if(data.results.length < 1){
@@ -49,7 +52,8 @@ export const PageDinamica = () => {
                   return <div className='pelicula-peticion' key={ele.id}>
                           <h1>{ele.original_title}</h1>
                           {
-                            ele.poster_path!== null ?<img className='img' src={`https://image.tmdb.org/t/p/w500/${ele.poster_path}`} alt="" /> :'No hay imagen disponible'
+                            ele.poster_path!== null ?<img className='img' src={`${images}/w500/${ele.poster_path}`} alt="" /> 
+                            :'No hay imagen disponible'
                           }
                           
                           <br/>
