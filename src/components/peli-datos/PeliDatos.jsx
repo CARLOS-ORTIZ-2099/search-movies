@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
-import { Gallery } from './Gallery'
+
+import { Gallery } from "../gallery/Gallery"
+
 const images = import.meta.env.VITE_IMAGES
 
 export const PeliDatos = ({infoPeli, back}) => {

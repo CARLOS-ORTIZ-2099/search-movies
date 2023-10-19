@@ -1,9 +1,10 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { Buscador } from '../components/Buscador'
+
 import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import './page-dinamica.css'
-import { ErrorBusqueda } from './error/ErrorBusqueda'
+import { ErrorBusqueda } from '../error/ErrorBusqueda'
+import { Buscador } from '../../components/buscador/Buscador'
 const urlApi = import.meta.env.VITE_API_URL
 const key = import.meta.env.VITE_KEY
 const images = import.meta.env.VITE_IMAGES

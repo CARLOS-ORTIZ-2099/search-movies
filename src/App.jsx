@@ -1,9 +1,11 @@
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { Home } from './pages/Home'
-import { PageDinamica } from './pages/PageDinamica'
-import {PeliculaInfo } from './pages/PeliculaInfo'
-import { Header } from './components/Header'
+import { Home } from './pages/home/Home'
+import { PageDinamica } from './pages/page-dinamica/PageDinamica'
+import {PeliculaInfo } from './pages/pelicula-info/PeliculaInfo'
+import { Header } from './components/header/Header'
+
+
 
 
 function App() {

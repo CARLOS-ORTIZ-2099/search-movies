@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import  './gallery.css'
-import { Modal } from './Modal';
+import { Modal } from '../modal/Modal';
 const img = import.meta.env.VITE_IMAGES
 
 /* recibimos como prop el valor que retorne el hook useTrailerPeli, que hasta este punto se espera que sea un objeto con datos de la peli, entre ellos las imagenes de la peli */

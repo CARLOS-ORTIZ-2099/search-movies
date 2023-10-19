@@ -1,13 +1,13 @@
 import { useNavigate} from "react-router-dom"
 /* import charging from '../assets/rings.svg' */
 /* import './pelicula.css' */
-import useInfoPeli from "../hooks/useInfoPeli";
-import useTrailerPeli from "../hooks/useTrailerPeli";
+import useInfoPeli from "../../hooks/useInfoPeli";
+import useTrailerPeli from "../../hooks/useTrailerPeli";
 import { useState } from "react";
-import { InfoPeliError } from "./error/InfoPeliError";
+import { InfoPeliError } from "../error/InfoPeliError";
 import './pelicula-info.css'
-import { Trailer } from "../components/Trailer";
-import { PeliDatos } from "../components/PeliDatos";
+import { Trailer } from "../../components/trailer/Trailer";
+import { PeliDatos } from "../../components/peli-datos/PeliDatos";
 const images = import.meta.env.VITE_IMAGES
 
 export const PeliculaInfo = () => {

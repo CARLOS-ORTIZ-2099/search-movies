@@ -1,5 +1,5 @@
-import { Buscador } from "../components/Buscador"
-import { GrillaPeliculas } from "./GrillaPeliculas"
+import { Buscador } from "../../components/buscador/Buscador"
+import { GrillaPeliculas } from "../grilla-peliculas/GrillaPeliculas"
 
 
 export const Home = () => {
