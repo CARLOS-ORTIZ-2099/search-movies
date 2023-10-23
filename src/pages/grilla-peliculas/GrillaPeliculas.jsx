@@ -12,7 +12,7 @@ export const GrillaPeliculas = () => {
     const [page, setPages] = useState(1)
 
     useEffect(()=> {
-        GrillaPeliculas(page) 
+        petitionPeliculas(page) 
     },[page])
 
     
@@ -29,7 +29,7 @@ const back = () => {
     }   
 }
 
-    async function GrillaPeliculas(page) {
+    async function petitionPeliculas(page) {
         try{
             let response = await fetch(`${urlApi}/movie/popular?api_key=${key}&page=${page}`)
                                         
