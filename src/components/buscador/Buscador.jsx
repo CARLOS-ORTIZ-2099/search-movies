@@ -11,10 +11,10 @@ const navigate = useNavigate()
 
     const submit = (e) => {
         e.preventDefault()
+        if(namePeli.length <1 ){
+            return
+        }
         console.log(namePeli)
-        /*   si el usuario no escribe nada en el input, pero aun asi intenta darle en buscar, como no hay ningun valor esto me llevara a la pagina de inicio,
-            ya que el estado namePeli es vacio, y con useNavigate le decimos llevame a "/" y esto indica que debera llevarme al home
-        */
         navigate(`/${namePeli}`)
         
     }

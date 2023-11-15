@@ -43,7 +43,7 @@ export const PageDinamica = () => {
       <div className='container-phather'>
           
           <div className='button-container'>
-            <button onClick={()=> back('/')}>Return Home</button>
+            <button onClick={()=> back(-1)}>Return Home</button>
           </div>
           
           <div className='page-dinamica-container'>
