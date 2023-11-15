@@ -1,6 +1,4 @@
 import { useNavigate} from "react-router-dom"
-/* import charging from '../assets/rings.svg' */
-/* import './pelicula.css' */
 import useInfoPeli from "../../hooks/useInfoPeli";
 import useTrailerPeli from "../../hooks/useTrailerPeli";
 import { useState } from "react";
@@ -10,7 +8,7 @@ import { Trailer } from "../../components/trailer/Trailer";
 import { PeliDatos } from "../../components/peli-datos/PeliDatos";
 const images = import.meta.env.VITE_IMAGES
 
-export const PeliculaInfo = () => {
+export const MovieInfo = () => {
   
   const [TrailerState, setTrailerState] = useState(false)
 
@@ -20,8 +18,8 @@ export const PeliculaInfo = () => {
 
   const back = () => navegation(-1)  
 
-let infoPeli = useInfoPeli()
-let linkTrailer = useTrailerPeli()
+  let infoPeli = useInfoPeli()
+  let linkTrailer = useTrailerPeli()
 
   return (
       <>

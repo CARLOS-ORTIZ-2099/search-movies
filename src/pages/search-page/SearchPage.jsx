@@ -9,7 +9,7 @@ const urlApi = import.meta.env.VITE_API_URL
 const key = import.meta.env.VITE_KEY
 const images = import.meta.env.VITE_IMAGES
 
-export const PageDinamica = () => {
+export const SearchPage = () => {
     const {namepeli} = useParams()
     console.log(namepeli)
 

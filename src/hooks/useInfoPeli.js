@@ -24,7 +24,7 @@ export const useInfoPeli = () => {
                 let response = await fetch(`${urlApi}/movie/${idPeli}?api_key=${key}&append_to_response=videos,images`)
                 console.log(response)
                 if(response.ok!== true){
-                    throw 'No Hay Data'
+                    throw 'No Hay Informacion de la Pelicula'
                 }
                 let data = await response.json()
                 console.log(data)

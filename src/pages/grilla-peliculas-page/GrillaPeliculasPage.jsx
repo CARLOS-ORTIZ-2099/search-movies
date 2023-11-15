@@ -1,11 +1,10 @@
-/* import { useEffect, useState } from "react" */
 import { Link, useNavigate, useParams } from "react-router-dom"
 import '../grilla-peliculas/grilla-peliculas.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import { useGrillaPelis } from "../../hooks/useGrillaPelis"
-/* const urlApi =  import.meta.env.VITE_API_URL
-const key = import.meta.env.VITE_KEY */
+import { ErrorPetitionMovies } from "../error/ErrorPetitionMovies"
+
 const images = import.meta.env.VITE_IMAGES
 
 export const GrillaPeliculasPage = () => {
@@ -24,7 +23,6 @@ const back = () => {
 }
 
   return (
-   
     <div className="container-phather">
         {
             error == null ? 
@@ -50,7 +48,7 @@ const back = () => {
             <button onClick={back} className="button-back">{<FontAwesomeIcon  icon={faArrowLeft}fade />}</button>
             <button onClick={next} className="button-next">{<FontAwesomeIcon icon={faArrowRight} fade/>}</button>
             </>
-            : <h1>{error.status} {error.statusText} </h1>
+            : <ErrorPetitionMovies error={error}/>
         }
            
     </div>

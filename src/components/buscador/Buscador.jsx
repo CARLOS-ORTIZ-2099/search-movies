@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import './buscador.css'
@@ -18,6 +16,7 @@ const navigate = useNavigate()
         navigate(`/${namePeli}`)
         
     }
+    
   return (
     <div className="buscador-container">
         <form className="form-conatiner" onSubmit={submit} action="">
