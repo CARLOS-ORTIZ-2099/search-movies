@@ -5,8 +5,8 @@ import { GrillaPeliculasPage } from "../grilla-peliculas-page/GrillaPeliculasPag
 export const PageGrid = () => {
   return (
     <div>   
-            <Buscador/>
-            <GrillaPeliculasPage/>
+          <Buscador/>
+          <GrillaPeliculasPage/>
     </div>
   )
 }

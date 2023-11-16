@@ -6,6 +6,7 @@
    /*  width: 100%; */
 }
 
+
 /* Define una animación llamada 'colorChange' para el h1 */
 @keyframes colorChange {
     /* Define colores aleatorios en diferentes etapas de la animación */
@@ -37,7 +38,13 @@
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Ajusta el color y la intensidad del resplandor */
     /* Opcional: Agrega una animación para hacer que el resplandor parpadee */
     animation: glow 1s ease-in-out infinite alternate;
+    display: inline;
 }
+
+.glowing-text:hover {
+    cursor: pointer;
+}
+
 
 /* Define una animación llamada 'glow' */
 @keyframes glow {

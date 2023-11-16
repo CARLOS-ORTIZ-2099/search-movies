@@ -3,7 +3,7 @@ import useInfoPeli from "../../hooks/useInfoPeli";
 import useTrailerPeli from "../../hooks/useTrailerPeli";
 import { useState } from "react";
 import { InfoPeliError } from "../error/InfoPeliError";
-import './pelicula-info.css'
+import './movie-info.css'
 import { Trailer } from "../../components/trailer/Trailer";
 import { PeliDatos } from "../../components/peli-datos/PeliDatos";
 const images = import.meta.env.VITE_IMAGES
@@ -31,13 +31,13 @@ export const MovieInfo = () => {
             :
             <div className='peli-container'>  
 
-                  <div className='peli-banner' style={{backgroundImage:`url(${images}/w1280/${infoPeli.backdrop_path})`}}>        
-                      <Trailer TrailerState={TrailerState} watchTrailer={watchTrailer} linkTrailer={linkTrailer}/> 
-                  </div>
+              <div className='peli-banner' style={{backgroundImage:`url(${images}/w1280/${infoPeli.backdrop_path})`}}>        
+                <Trailer TrailerState={TrailerState} watchTrailer={watchTrailer} linkTrailer={linkTrailer}/> 
+              </div>
 
-                  <div className="info-peli">
-                      <PeliDatos infoPeli={infoPeli} back={back}/>
-                  </div>
+              <div className="info-peli">
+                <PeliDatos infoPeli={infoPeli} back={back}/>
+              </div>
 
             </div>   
         }

@@ -1,21 +1,3 @@
-/* img{
-    background-color: rgb(31, 70, 197);
- 
-        width: 150px;
-    
-}
- */
-.peli-banner {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    /* background-size: contain;
-    background-position: top center; */
-    color: whitesmoke;
-    min-height: 600px;
-    text-align: center;
-   
-}
-
 
 .peli-container{
     background-color: rgb(15, 23, 30);
@@ -23,6 +5,18 @@
     color: aliceblue;
     padding: .5rem;
 }
+
+
+.peli-banner {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: whitesmoke;
+    min-height: 600px;
+    text-align: center;
+   
+}
+
+
 
 
 .info-peli {
@@ -66,18 +60,6 @@
 }
 
 
-/* 
-tamano pequeño
-.peli-banner {
-    background-repeat: no-repeat;
-   
-    background-size: contain;
-    background-position: top center;
-    color: whitesmoke;
-    min-height: 200px;
-}
-
- */
 
 
  .icon-play{
@@ -93,7 +75,19 @@ tamano pequeño
     cursor: pointer;
  }
 
-
+ 
+ .youtube-container {
+   /*  border: solid red 3px; */
+    height: 500px;
+}
+.youtube{
+    position: static;
+    width: 50%;
+    height: 100%;
+   /*  border: solid blue 3px; */
+    display: block;
+    margin: 0 auto;
+}
 
 @media screen and (max-width:500px) {
     .peli-banner {
@@ -107,10 +101,10 @@ tamano pequeño
 
     .youtube-container {
         position: relative;
-       /*  border: solid purple 10px; */
         padding-bottom: 56.25%; /* Proporción de 16:9 para el ancho y la altura */
         height: 0;
         overflow: hidden;
+       
       }
       
   
@@ -120,6 +114,23 @@ tamano pequeño
         left: 0;
         width: 100%;
         height: 100%;
+    }
+
+}
+
+@media screen and (min-width:600px ) and (max-width:1000px)   {
+    .youtube-container {
+        /*  border: solid red 3px; */
+         height: 500px;
+     }
+     .youtube{
+         position: static;
+         width: 70%;
+         height: 100%;
+        /*  border: solid blue 3px; */
+         display: block;
+         margin: 0 auto;
+     
     }
 
 }

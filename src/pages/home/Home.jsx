@@ -7,7 +7,6 @@ export const Home = () => {
     <div className="home">
        
         <Buscador/>
-        {/* peliculas de la bd  */}
         <GrillaPeliculas/>
 
     </div>

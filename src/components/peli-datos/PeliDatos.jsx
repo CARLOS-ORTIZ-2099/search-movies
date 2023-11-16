@@ -8,41 +8,43 @@ export const PeliDatos = ({infoPeli, back}) => {
 
   return (
     <div>
-                    <h1>{infoPeli.title}</h1>
-                    <p>{infoPeli.overview}</p>
-                    <h2>Date : {infoPeli.release_date}</h2>
-                    <h2>Language Original: {infoPeli.original_language}</h2>
-                    <h3>Average : {infoPeli.vote_average}%</h3>
-                    <button onClick={back}>retur home</button>
+        <h1>{infoPeli.title}</h1>
+        <p>{infoPeli.overview}</p>
+        <h2>Date : {infoPeli.release_date}</h2>
+        <h2>Language Original: {infoPeli.original_language}</h2>
+        <h3>Average : {infoPeli.vote_average}%</h3>
+        <button onClick={back}>retur home</button>
                    
-                    <h3>Genre: </h3>
-                       {
-                            infoPeli.genres?.map(genre => (
-                            <span key={genre.id}> {genre.name}</span>
-                            ))
-                       }
+        <h3>Genre: </h3>
+          {
+              infoPeli.genres?.map(genre => (
+              <span key={genre.id}> {genre.name}</span>
+              ))
+          }
 
-                        <h3>Run Time : { infoPeli.runtime} minutes</h3>
+          <h3>Run Time : { infoPeli.runtime} minutes</h3>
                         
-                        <h2 style={{color:'tomato'}}> Companies Production : </h2>
+          <h2 style={{color:'tomato'}}> Companies Production : </h2>
 
-                       {
-                            infoPeli.production_companies?.map(companie => (
-                            <div key={companie.id}>
-                                <h3>{companie.name}</h3>
-                                {
-                                    companie.logo_path ? <img style={{width:'15%'}} src={`${images}/original${companie.logo_path}`}/>: 'No hay imagen disponible'
-                                }                             
-                            </div>
-                        ))
-                       }
-                         <h2 style={{color:'tomato'}}>Production Countries: </h2>
-                       {
-                             infoPeli.production_countries?.map((countrie, index) => (
-                              <h3 key={index}>{countrie.name}</h3>
-                        ))
-                       }
-                      <Gallery infoPeli={infoPeli}/>
+            {
+                infoPeli.production_companies?.map(companie => (
+                  <div key={companie.id}>
+                    <h3>{companie.name}</h3>
+                    {
+                      companie.logo_path ?
+                       <img style={{width:'15%'}} src={`${images}/original${companie.logo_path}`}/>
+                       : 'No hay imagen disponible'
+                    }                             
+                  </div>
+                ))
+            }
+          <h2 style={{color:'tomato'}}>Production Countries: </h2>
+            {
+              infoPeli.production_countries?.map((countrie, index) => (
+                <h3 key={index}>{countrie.name}</h3>
+              ))
+            }
+            <Gallery infoPeli={infoPeli}/>
     </div>
   )
 }
