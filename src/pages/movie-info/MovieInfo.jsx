@@ -11,6 +11,8 @@ const images = import.meta.env.VITE_IMAGES
 export const MovieInfo = () => {
   
   const [TrailerState, setTrailerState] = useState(false)
+  const {infoPeli, error} = useInfoPeli()
+  const {linkTrailer, errorTrailer} = useTrailerPeli()
 
   const watchTrailer = () => setTrailerState(!TrailerState)
 
@@ -18,21 +20,18 @@ export const MovieInfo = () => {
 
   const back = () => navegation(-1)  
 
-  let infoPeli = useInfoPeli()
-  let linkTrailer = useTrailerPeli()
-
   return (
       <>
       {/* el custom hook useInfoPeli puede tener la info de la peli si la base de datos no reporto un error o un objeto con el error si la base de datos reporto algun error o no encontro la peli */}
         {
-          infoPeli.error 
+          error != null 
             ? 
-            <InfoPeliError error={infoPeli.error}/>
+            <InfoPeliError error={error}/>
             :
             <div className='peli-container'>  
 
               <div className='peli-banner' style={{backgroundImage:`url(${images}/w1280/${infoPeli.backdrop_path})`}}>        
-                <Trailer TrailerState={TrailerState} watchTrailer={watchTrailer} linkTrailer={linkTrailer}/> 
+                <Trailer TrailerState={TrailerState} watchTrailer={watchTrailer} linkTrailer={linkTrailer} errorTrailer={errorTrailer}/> 
               </div>
 
               <div className="info-peli">

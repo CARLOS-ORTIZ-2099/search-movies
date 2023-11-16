@@ -1,16 +1,24 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import './grilla-peliculas.css'
 import { useGrillaPelis } from "../../hooks/useGrillaPelis"
 import { ErrorPetitionMovies } from "../error/ErrorPetitionMovies"
 import { ArrowsButtons } from "../../components/arrows-buttons/ArrowsButtons"
+import { useState } from "react"
 
 const images = import.meta.env.VITE_IMAGES
 
 export const GrillaPeliculas = () => {
+    const [page, setPage] = useState(1)
+    const {error, peliculas} = useGrillaPelis(page)
 
-    const {error, peliculas} = useGrillaPelis(1)
-    const navigate = useNavigate()   
-    const next = () => navigate(`/page/${parseInt(1)+1}`) 
+    const next = () => setPage(previus => previus + 1)
+    
+    const back = () => {
+        setPage(previus => previus - 1)
+        if(page <=1){
+            setPage(1)
+        }
+    }
 
   return (
     <div className="container-phather">
@@ -36,7 +44,7 @@ export const GrillaPeliculas = () => {
                     }      
                 </div>
           
-                <ArrowsButtons next={next}/>
+                <ArrowsButtons next={next} back={back}/>
             </>
             :<ErrorPetitionMovies error = {error}/>
              

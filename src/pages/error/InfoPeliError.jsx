@@ -12,7 +12,9 @@ export const InfoPeliError = ({error}) => {
   return (
     <div>
               <div className="info-peli">
-                      <h1>{error}</h1>
+                      <h1>{error.status}</h1>
+                      <h1>{error.message}</h1>
+                      <h1>{error.statusText}</h1>
                       <button onClick={backHome}>return Home</button>
               </div>
     </div>

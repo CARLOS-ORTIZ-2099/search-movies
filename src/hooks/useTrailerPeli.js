@@ -11,6 +11,7 @@ export const useTrailerPeli = () => {
     console.log(idPeli)
     /* se crea un estado para guardar la data que se retornara */
     const [linkTrailer, setLinkTrailer] = useState()
+    const [errorTrailer, setErrorTrailer] = useState(null)
    
     useEffect(() => {
         videosTrailer()
@@ -46,14 +47,14 @@ export const useTrailerPeli = () => {
         } 
         catch(error){
             console.error(error)
-            setLinkTrailer({error:error})
+            setErrorTrailer(error)
             console.log(linkTrailer)
         }
       }
       
 /* link trailer retornara un objeto con un error generado por la excepcion, si no encuentra ni un tipo de video o devolvera un trailer si encuentra alguno de ese tipo,
    pero si devuelve un array de videos que no son necesariamente del tipo trailer pues devolvera el primer valor, sin importar el tipo de video que sea */
-      return linkTrailer
+      return {linkTrailer, errorTrailer}
       
 }
 
