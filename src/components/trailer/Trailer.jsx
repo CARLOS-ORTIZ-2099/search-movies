@@ -18,19 +18,18 @@ export const Trailer = ({TrailerState, linkTrailer, watchTrailer, errorTrailer})
                     : 
                     <div className="youtube-container">
                         {
-                            errorTrailer!=null  ? 
-                            <h1>{errorTrailer.message}</h1>
-                            :(
-                                <>
-                                    <YouTube className="youtube"
-                                        videoId={linkTrailer}
-                                        opts={
+                            errorTrailer == null  ? 
+                            <>
+                                <YouTube className="youtube"
+                                         videoId={linkTrailer}
+                                         opts={
                                            opts
-                                        }
-                                    /> 
-                                    <FontAwesomeIcon className="icon-x" onClick={watchTrailer} icon={faCircleXmark} fade/>
-                                </>
-                            )
+                                         }
+                                /> 
+                                <FontAwesomeIcon className="icon-x" onClick={watchTrailer} icon={faCircleXmark} fade/>
+                            </>
+                            : <h1>{errorTrailer.message}</h1>             
+                            
                         }            
                     </div>
                 }  

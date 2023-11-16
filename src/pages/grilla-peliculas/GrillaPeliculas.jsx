@@ -34,7 +34,7 @@ export const GrillaPeliculas = () => {
                                     {
                                         pelicula?.poster_path!== null ?
                                         <img className='img' src={`${images}/w500${pelicula.poster_path}`} alt="" /> 
-                                        : <h1>no hay imagen</h1>
+                                        : <h2>no hay imagen</h2>
                                     }
                                         <br/>
                                     <Link to={`/pelicula/${pelicula.id}`}>see more</Link>

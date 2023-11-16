@@ -1,19 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
-
 const urlApi =  import.meta.env.VITE_API_URL
 const key = import.meta.env.VITE_KEY
 
 
 export const useGrillaPelis = (page) => {
-    
-    //console.log( page)
+
     const [peliculas, setPeliculas] = useState([])
     const [error, setError] = useState(null)
 
-
+    
     useEffect(()=> {
         petitionPeliculas(page) 
+        console.log(page)
     },[page])
 
     async function petitionPeliculas(page) {
@@ -32,7 +31,7 @@ export const useGrillaPelis = (page) => {
             console.log(peliculas)
         }
         catch(error){
-            console.log(error)
+           // console.log(error)
             setError(error)
         }   
     }

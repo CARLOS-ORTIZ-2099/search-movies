@@ -8,8 +8,8 @@ export const ErrorBusqueda = ({error}) => {
 
   return (
     <div className='error-busqueda-container'>
-                <h1>{error.message}</h1>
-                <img src={imageError} alt=""/>      
+            <h1>{error.message}</h1>
+            <img src={imageError} alt=""/>      
     </div>
   )
 }

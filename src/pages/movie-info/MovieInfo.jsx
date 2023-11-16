@@ -13,32 +13,30 @@ export const MovieInfo = () => {
   const [TrailerState, setTrailerState] = useState(false)
   const {infoPeli, error} = useInfoPeli()
   const {linkTrailer, errorTrailer} = useTrailerPeli()
+  const navegation = useNavigate()  
 
   const watchTrailer = () => setTrailerState(!TrailerState)
-
-  const navegation = useNavigate()   
 
   const back = () => navegation(-1)  
 
   return (
       <>
-      {/* el custom hook useInfoPeli puede tener la info de la peli si la base de datos no reporto un error o un objeto con el error si la base de datos reporto algun error o no encontro la peli */}
         {
-          error != null 
-            ? 
-            <InfoPeliError error={error}/>
-            :
-            <div className='peli-container'>  
+          error == null ?
+          <div className='peli-container'>  
 
-              <div className='peli-banner' style={{backgroundImage:`url(${images}/w1280/${infoPeli.backdrop_path})`}}>        
-                <Trailer TrailerState={TrailerState} watchTrailer={watchTrailer} linkTrailer={linkTrailer} errorTrailer={errorTrailer}/> 
-              </div>
+            <div className='peli-banner' style={{backgroundImage:`url(${images}/w1280/${infoPeli.backdrop_path})`}}>        
+              <Trailer TrailerState={TrailerState} linkTrailer={linkTrailer} errorTrailer={errorTrailer}  watchTrailer={watchTrailer}/> 
+            </div>
 
-              <div className="info-peli">
-                <PeliDatos infoPeli={infoPeli} back={back}/>
-              </div>
+            <div className="info-peli">
+              <PeliDatos infoPeli={infoPeli} back={back}/>
+            </div>
 
-            </div>   
+          </div>   
+            
+          :<InfoPeliError error={error}/>
+           
         }
       </>
     

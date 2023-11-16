@@ -11,11 +11,11 @@ const images = import.meta.env.VITE_IMAGES
 
 export const SearchPage = () => {
     const {namepeli} = useParams()
-    console.log(namepeli)
-
     const back = useNavigate()
     const [peliculasBusqueda, setPeliculasBusqueda] = useState([])
     const [error, setError] = useState(null)
+
+    console.log(namepeli)
 
     useEffect(()=> {
         buscar(namepeli)
@@ -44,24 +44,25 @@ export const SearchPage = () => {
       <div className='container-phather'>
           
           <div className='button-container'>
-            <button onClick={()=> back(-1)}>Return Home</button>
+            <button onClick={() => back(-1)}>Return Home</button>
           </div>
           
           <div className='page-dinamica-container'>
               {
-                error ? <ErrorBusqueda error={error}/>
-                              :( peliculasBusqueda.map(ele => {
-                  return <div className='pelicula-peticion' key={ele.id}>
+                error == null ?
+                 peliculasBusqueda.map(ele => (
+                   <div className='pelicula-peticion' key={ele.id}>
                           <h1>{ele.original_title}</h1>
                           {
-                            ele.poster_path!== null ?<img className='img' src={`${images}/w500/${ele.poster_path}`} alt="" /> 
+                            ele.poster_path!== null ? <img className='img' src={`${images}/w500/${ele.poster_path}`} alt="" /> 
                             :'No hay imagen disponible'
                           }
                           
                           <br/>
                           <Link to={`/pelicula/${ele.id}`}>see more</Link>
-                        </div>
-                }))
+                    </div>
+                 )) 
+                : <ErrorBusqueda error={error}/>
               }
           </div>
       </div>
