@@ -22,7 +22,7 @@ export const useInfoPeli = () => {
     async function MovieSearch() {
             try{
                 let response = await fetch(`${urlApi}/movie/${idPeli}?api_key=${key}&append_to_response=videos,images`)
-                console.log(response)
+                //console.log(response)
                 if(response.ok!== true){
                     let responseError = new Error('No Hay Informacion de la Pelicula')
                     responseError.status = response.status || '000'
@@ -31,8 +31,7 @@ export const useInfoPeli = () => {
                     
                 }
                 let data = await response.json()
-                console.log(data)
-                
+                //console.log(data)
                 setInfoPeli(data)
             }
             catch(error){

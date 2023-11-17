@@ -6,9 +6,9 @@ const key = import.meta.env.VITE_KEY
 
 export const useTrailerPeli = () => {
 
-    console.log(useParams())
+   // console.log(useParams())
     const {idPeli} = useParams()
-    console.log(idPeli)
+   // console.log(idPeli)
     /* se crea un estado para guardar la data que se retornara */
     const [linkTrailer, setLinkTrailer] = useState()
     const [errorTrailer, setErrorTrailer] = useState(null)
@@ -22,9 +22,9 @@ export const useTrailerPeli = () => {
         try {
             let response = await fetch(`${urlApi}/movie/${idPeli}/videos?api_key=${key}`)
                                         
-            console.log(response)
+            //console.log(response)
             const videos = await response.json()
-            console.log(videos)
+            //console.log(videos)
             if(videos.results.length < 1){
                
                 throw new Error('No hay trailer disponible 😥')
@@ -40,7 +40,7 @@ export const useTrailerPeli = () => {
             }
             else{
                 let trailerVideo = trailer.key
-                console.log(trailerVideo)
+                //console.log(trailerVideo)
                 setLinkTrailer(trailerVideo)
             }
 
