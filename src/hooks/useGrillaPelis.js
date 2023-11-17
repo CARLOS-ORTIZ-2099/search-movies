@@ -28,6 +28,7 @@ export const useGrillaPelis = (page) => {
 
             let data = await response.json()
             setPeliculas(data.results)
+            setError(null)
             console.log(peliculas)
         }
         catch(error){

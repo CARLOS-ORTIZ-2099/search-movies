@@ -42,7 +42,7 @@
 @media screen and (max-width:500px) {
     .buscador-container form {
      /*    background-color: red; */
-        padding: 1rem;
+        padding: 0rem;
         display: flex;
         flex-direction: column;
         justify-content: center;

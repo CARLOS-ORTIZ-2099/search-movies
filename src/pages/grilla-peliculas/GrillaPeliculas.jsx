@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
 import './grilla-peliculas.css'
 import { useGrillaPelis } from "../../hooks/useGrillaPelis"
-import { ErrorPetitionMovies } from "../error/ErrorPetitionMovies"
 import { ArrowsButtons } from "../../components/arrows-buttons/ArrowsButtons"
 import { useState } from "react"
+import { InfoPeliError } from "../error/InfoPeliError"
+
 
 const images = import.meta.env.VITE_IMAGES
 
@@ -46,7 +47,7 @@ export const GrillaPeliculas = () => {
           
                 <ArrowsButtons next={next} back={back}/>
             </>
-            :<ErrorPetitionMovies error = {error}/>
+            :<InfoPeliError error={error} />
              
         }
     </div>

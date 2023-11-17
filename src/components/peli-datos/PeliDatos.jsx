@@ -12,7 +12,7 @@ export const PeliDatos = ({infoPeli, back}) => {
         <p>{infoPeli.overview}</p>
         <h2>Date : {infoPeli.release_date}</h2>
         <h2>Language Original: {infoPeli.original_language}</h2>
-        <h3>Average : {infoPeli.vote_average}%</h3>
+        <h3>Average : {infoPeli?.vote_average}%</h3>
         <button onClick={back}>retur home</button>
                    
         <h3>Genre: </h3>

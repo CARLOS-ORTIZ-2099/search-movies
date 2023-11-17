@@ -8,8 +8,7 @@ export const Header = () => {
 
   return (
   <div className="header-container">
-      <h1 className="glowing-text" onClick={returnHome}>Movies Store</h1>
-           
+      <h1 className="glowing-text" onClick={returnHome}>Movies Store</h1>    
   </div>
   )
 }

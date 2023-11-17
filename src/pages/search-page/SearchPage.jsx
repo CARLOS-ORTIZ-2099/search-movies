@@ -30,6 +30,7 @@ export const SearchPage = () => {
                 throw  new Error('upss parece que la pelicula que buscas no existe')
             }
             setPeliculasBusqueda(data.results)
+            setError(null)
         }
         catch(error){
           console.error(error)
@@ -44,7 +45,7 @@ export const SearchPage = () => {
       <div className='container-phather'>
           
           <div className='button-container'>
-            <button onClick={() => back(-1)}>Return Home</button>
+            <button onClick={() => back('/')}>Return Home</button>
           </div>
           
           <div className='page-dinamica-container'>

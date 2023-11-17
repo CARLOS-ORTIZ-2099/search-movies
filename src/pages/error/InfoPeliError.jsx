@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-
 import {useNavigate} from 'react-router-dom'
+import errorRed from '../../assets/error-red.svg'
+import './info-peli-error.css'
 
 export const InfoPeliError = ({error}) => {
     const back = useNavigate()
@@ -10,13 +11,15 @@ export const InfoPeliError = ({error}) => {
     }
 
   return (
-    <div>
-              <div className="info-peli">
+
+              <div className="error-busqueda-container">
                       <h1>{error.status}</h1>
                       <h1>{error.message}</h1>
                       <h1>{error.statusText}</h1>
-                      <button onClick={backHome}>return Home</button>
+                      <img src={errorRed} alt="" />
+                      <div className='button-container'>
+                        <button  onClick={backHome}>Return Home</button>
+                    </div>
               </div>
-    </div>
   )
 }
