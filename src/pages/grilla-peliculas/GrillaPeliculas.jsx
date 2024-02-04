@@ -5,12 +5,15 @@ import { ArrowsButtons } from "../../components/arrows-buttons/ArrowsButtons"
 import { useState } from "react"
 import { InfoPeliError } from "../error/InfoPeliError"
 
-
 const images = import.meta.env.VITE_IMAGES
+const urlApi =  import.meta.env.VITE_API_URL
+const key = import.meta.env.VITE_KEY
 
 export const GrillaPeliculas = () => {
+    
     const [page, setPage] = useState(1)
-    const {error, peliculas} = useGrillaPelis(page)
+    const url = `${urlApi}/movie/popular?api_key=${key}&page=${page}`
+    const {error, peliculas} = useGrillaPelis(page, url)
 
     const next = () => setPage(previus => previus + 1)
     
@@ -44,7 +47,6 @@ export const GrillaPeliculas = () => {
                         ))
                     }      
                 </div>
-          
                 <ArrowsButtons next={next} back={back}/>
             </>
             :<InfoPeliError error={error} />

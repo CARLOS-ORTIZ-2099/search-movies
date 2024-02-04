@@ -1,23 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
-const urlApi =  import.meta.env.VITE_API_URL
-const key = import.meta.env.VITE_KEY
 
-
-export const useGrillaPelis = (page) => {
-
+export const useGrillaPelis = (valueDinamic, url) => {
+    console.log(valueDinamic);
+    console.log(url);
     const [peliculas, setPeliculas] = useState([])
     const [error, setError] = useState(null)
 
-    
     useEffect(()=> {
-        petitionPeliculas(page) 
-        console.log(page)
-    },[page])
+        petitionPeliculas() 
+    },[valueDinamic])
 
-    async function petitionPeliculas(page) {
+    async function petitionPeliculas() {
         try{
-            let response = await fetch(`${urlApi}/movie/popular?api_key=${key}&page=${page}`)
+            let response = await fetch(url)
                                         
             if(response.ok !== true){
                 let responseError = new Error('error con la peticion')
@@ -25,11 +21,15 @@ export const useGrillaPelis = (page) => {
                 responseError.statusText = response.statusText || 'error al cargar los datos'
                 throw responseError
             }
-
+           
             let data = await response.json()
+          //  console.log(data);
+            if(data.results.length < 1){
+                throw  new Error('upss parece que la pelicula que buscas no existe')
+            }
             setPeliculas(data.results)
             setError(null)
-            console.log(peliculas)
+           // console.log(peliculas)
         }
         catch(error){
            // console.log(error)

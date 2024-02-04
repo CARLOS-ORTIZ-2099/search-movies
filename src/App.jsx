@@ -5,10 +5,7 @@ import { Header } from './components/header/Header'
 import { SearchPage } from './pages/search-page/SearchPage'
 
 
-
 function App() {
-
-
   return (
     <>
         <BrowserRouter>

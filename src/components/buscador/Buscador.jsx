@@ -9,12 +9,9 @@ const navigate = useNavigate()
 
     const submit = (e) => {
         e.preventDefault()
-        if(namePeli.length <1 ){
-            return
-        }
+        if(namePeli.length <1 )return
         console.log(namePeli)
-        navigate(`/${namePeli}`)
-        
+        navigate(`/${namePeli}`)  
     }
     
   return (

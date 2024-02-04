@@ -4,11 +4,9 @@ import { GrillaPeliculas } from "../grilla-peliculas/GrillaPeliculas"
 
 export const Home = () => {
   return (
-    <div className="home">
-       
+    <div className="home"> 
         <Buscador/>
         <GrillaPeliculas/>
-
     </div>
   )
 }

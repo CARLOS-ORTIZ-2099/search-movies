@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useNavigate, useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import './page-dinamica.css'
 import { ErrorBusqueda } from '../error/ErrorBusqueda'
 import { Buscador } from '../../components/buscador/Buscador'
+import { useGrillaPelis } from '../../hooks/useGrillaPelis'
 const urlApi = import.meta.env.VITE_API_URL
 const key = import.meta.env.VITE_KEY
 const images = import.meta.env.VITE_IMAGES
@@ -12,32 +12,8 @@ const images = import.meta.env.VITE_IMAGES
 export const SearchPage = () => {
     const {namepeli} = useParams()
     const back = useNavigate()
-    const [peliculasBusqueda, setPeliculasBusqueda] = useState([])
-    const [error, setError] = useState(null)
-
-    console.log(namepeli)
-
-    useEffect(()=> {
-        buscar(namepeli)
-    }, [namepeli])
-
-    async function buscar(namepeli) {
-        try{
-            let response = await fetch(`${urlApi}/search/movie?api_key=${key}&query=${namepeli}`)
-            let data = await response.json()
-            console.log(data)
-            if(data.results.length < 1){
-                throw  new Error('upss parece que la pelicula que buscas no existe')
-            }
-            setPeliculasBusqueda(data.results)
-            setError(null)
-        }
-        catch(error){
-          console.error(error)
-          setError(error)
-          console.log(peliculasBusqueda)
-        }
-  }
+    const url = `${urlApi}/search/movie?api_key=${key}&query=${namepeli}`
+    const {error, peliculas} = useGrillaPelis(namepeli, url)
 
   return (
    <>
@@ -51,7 +27,7 @@ export const SearchPage = () => {
           <div className='page-dinamica-container'>
               {
                 error == null ?
-                 peliculasBusqueda.map(ele => (
+                 peliculas.map(ele => (
                    <div className='pelicula-peticion' key={ele.id}>
                           <h1>{ele.original_title}</h1>
                           {
