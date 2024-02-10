@@ -6,20 +6,18 @@ import './info-peli-error.css'
 export const InfoPeliError = ({error}) => {
     const back = useNavigate()
 
-    const backHome = () => {
-        back(-1)
-    }
+    const backHome = () => back(-1)
 
   return (
 
-              <div className="error-busqueda-container">
-                      <h1>{error.status}</h1>
-                      <h1>{error.message}</h1>
-                      <h1>{error.statusText}</h1>
-                      <img src={errorRed} alt="" />
-                      <div className='button-container'>
-                        <button  onClick={backHome}>Return Home</button>
-                    </div>
-              </div>
+      <div className="error-busqueda-container">
+          <h1>{error.status}</h1>
+          <h1>{error.message}</h1>
+          <h1>{error.statusText}</h1>
+          <img src={errorRed} alt="" />
+          <div className='button-container'>
+            <button  onClick={backHome}>Return Home</button>
+          </div>
+      </div>
   )
 }

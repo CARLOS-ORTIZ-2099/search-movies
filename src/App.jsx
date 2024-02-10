@@ -8,14 +8,14 @@ import { SearchPage } from './pages/search-page/SearchPage'
 function App() {
   return (
     <>
-        <BrowserRouter>
-          <Header/>
-            <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/pelicula/:idPeli' element={<MovieInfo/>}/>
-                <Route path='/:namepeli' element={<SearchPage/>}/>
-            </Routes>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Header/>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/pelicula/:idPeli' element={<MovieInfo/>}/>
+            <Route path='/:namepeli' element={<SearchPage/>}/>
+          </Routes>
+      </BrowserRouter>
     </>
   )
 }

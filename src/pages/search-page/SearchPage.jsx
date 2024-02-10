@@ -17,31 +17,31 @@ export const SearchPage = () => {
 
   return (
    <>
-        <Buscador />
+      <Buscador />
       <div className='container-phather'>
           
-          <div className='button-container'>
-            <button onClick={() => back('/')}>Return Home</button>
-          </div>
+        <div className='button-container'>
+          <button onClick={() => back('/')}>Return Home</button>
+        </div>
           
-          <div className='page-dinamica-container'>
-              {
-                error == null ?
-                 peliculas.map(ele => (
-                   <div className='pelicula-peticion' key={ele.id}>
-                          <h1>{ele.original_title}</h1>
-                          {
-                            ele.poster_path!== null ? <img className='img' src={`${images}/w500/${ele.poster_path}`} alt="" /> 
-                            :'No hay imagen disponible'
-                          }
-                          
-                          <br/>
-                          <Link to={`/pelicula/${ele.id}`}>see more</Link>
-                    </div>
-                 )) 
-                : <ErrorBusqueda error={error}/>
-              }
-          </div>
+        <div className='page-dinamica-container'>
+          {
+            error == null ?
+            peliculas.map(pelicula => (
+              <div className='pelicula-peticion' key={pelicula.id}>
+                    <h1>{pelicula.original_title}</h1>
+                    {
+                      pelicula.poster_path!== null ? 
+                      <img className='img' src={`${images}/w500/${pelicula.poster_path}`} alt="" /> 
+                      :<h2>No hay imagen disponible</h2>
+                    }       
+                    <br/>
+                    <Link to={`/pelicula/${pelicula.id}`}>see more</Link>
+              </div>
+            )) 
+            : <ErrorBusqueda error={error}/>
+          }
+        </div>
       </div>
    </>
   )

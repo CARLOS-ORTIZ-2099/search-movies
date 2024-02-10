@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-
 import { Gallery } from "../gallery/Gallery"
-
 const images = import.meta.env.VITE_IMAGES
 
 export const PeliDatos = ({infoPeli, back}) => {
@@ -16,35 +14,35 @@ export const PeliDatos = ({infoPeli, back}) => {
         <button onClick={back}>retur home</button>
                    
         <h3>Genre: </h3>
-          {
-              infoPeli.genres?.map(genre => (
-              <span key={genre.id}> {genre.name}</span>
-              ))
-          }
+        {
+          infoPeli.genres?.map(genre => (
+          <span key={genre.id}> {genre.name}</span>
+          ))
+        }
 
-          <h3>Run Time : { infoPeli.runtime} minutes</h3>
+        <h3>Run Time : { infoPeli.runtime} minutes</h3>
                         
-          <h2 style={{color:'tomato'}}> Companies Production : </h2>
+        <h2 style={{color:'tomato'}}> Companies Production : </h2>
 
-            {
-                infoPeli.production_companies?.map(companie => (
-                  <div key={companie.id}>
-                    <h3>{companie.name}</h3>
-                    {
-                      companie.logo_path ?
-                       <img style={{width:'15%'}} src={`${images}/original${companie.logo_path}`}/>
-                       : 'No hay imagen disponible'
-                    }                             
-                  </div>
-                ))
-            }
-          <h2 style={{color:'tomato'}}>Production Countries: </h2>
-            {
-              infoPeli.production_countries?.map((countrie, index) => (
-                <h3 key={index}>{countrie.name}</h3>
-              ))
-            }
-            <Gallery infoPeli={infoPeli}/>
+        {
+          infoPeli.production_companies?.map(companie => (
+            <div key={companie.id}>
+              <h3>{companie.name}</h3>
+              {
+                companie.logo_path ?
+                <img style={{width:'15%'}} src={`${images}/original${companie.logo_path}`}/>
+                : 'No hay imagen disponible'
+              }                             
+              </div>
+            ))
+        }
+        <h2 style={{color:'tomato'}}>Production Countries: </h2>
+        {
+          infoPeli.production_countries?.map((countrie, index) => (
+          <h3 key={index}>{countrie.name}</h3>
+          ))
+        }
+        <Gallery infoPeli={infoPeli}/>
     </div>
   )
 }

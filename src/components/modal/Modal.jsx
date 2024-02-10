@@ -16,16 +16,16 @@ export const Modal = ({clickedImg, setClickedImg, handelRotationRight, handelRot
     };
 
   return (
-        <div className='overlay dismiss' onClick={handleClick}>
-            <img src={`${images}/original${clickedImg}`} alt="bigger pic" />
-            <span className="dismiss" onClick={handleClick}>
-              X
-            </span>
-            {/* ejecutamos las funciones de mover hacia la izquierad y hacia la derecha, que se definio en el componente Gallery */}
-                <button id='previus' className='overlay-arrows_left' onClick={handelRotationLeft}>{<FontAwesomeIcon  icon={faArrowLeft} />}</button>
+    <div className='overlay dismiss' onClick={handleClick}>
+        <img src={`${images}/original${clickedImg}`} alt="bigger pic" />
+        <span className="dismiss" onClick={handleClick}>
+          X
+        </span>
+        {/* ejecutamos las funciones de mover hacia la izquierad y hacia la derecha, que se definio en el componente Gallery */}
+        <button id='previus' className='overlay-arrows_left' onClick={handelRotationLeft}>{<FontAwesomeIcon  icon={faArrowLeft} />}</button>
         
-                <button id='next' onClick={handelRotationRight} className='overlay-arrows_right'>{<FontAwesomeIcon  icon={faArrowRight} />}</button>
-        </div>
+        <button id='next' onClick={handelRotationRight} className='overlay-arrows_right'>{<FontAwesomeIcon  icon={faArrowRight} />}</button>
+    </div>
   )
 
 

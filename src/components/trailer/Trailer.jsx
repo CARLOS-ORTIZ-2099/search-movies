@@ -12,27 +12,25 @@ import YouTube from 'react-youtube';
 export const Trailer = ({TrailerState, linkTrailer, watchTrailer, errorTrailer}) => {
   return (
     <div className='container-prueba'>
-
-            { !TrailerState ? 
-                    <FontAwesomeIcon className="icon-play" onClick={watchTrailer} icon={faCirclePlay} bounce values="ver"/>
-                    : 
-                    <div className="youtube-container">
-                        {
-                            errorTrailer == null  ? 
-                            <>
-                                <YouTube className="youtube"
-                                         videoId={linkTrailer}
-                                         opts={
-                                           opts
-                                         }
-                                /> 
-                                <FontAwesomeIcon className="icon-x" onClick={watchTrailer} icon={faCircleXmark} fade/>
-                            </>
-                            : <h1>{errorTrailer.message}</h1>             
-                            
-                        }            
-                    </div>
-                }  
+      { !TrailerState ? 
+          <FontAwesomeIcon className="icon-play" onClick={watchTrailer} icon={faCirclePlay} bounce values="ver"/>
+          : 
+          <div className="youtube-container">
+            {
+              errorTrailer == null  ? 
+              <>
+                <YouTube className="youtube"
+                  videoId={linkTrailer}
+                  opts={
+                  opts
+                  }
+                /> 
+                <FontAwesomeIcon className="icon-x" onClick={watchTrailer} icon={faCircleXmark} fade/>
+              </>
+              : <h1>{errorTrailer.message}</h1>                                   
+            }            
+          </div>
+      }  
     </div>
   )
 }
